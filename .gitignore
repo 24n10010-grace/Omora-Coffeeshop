@@ -26,3 +26,4 @@
 # OS dan editor
 .DS_Store
 Thumbs.db
+.phpunit.result.cache
