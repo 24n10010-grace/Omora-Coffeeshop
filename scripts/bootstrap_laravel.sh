@@ -24,7 +24,7 @@ TMP_DIR="$(mktemp -d)"
 cleanup() { rm -rf "$TMP_DIR"; }
 trap cleanup EXIT
 
-composer create-project laravel/laravel "$TMP_DIR/laravel" --no-install --no-interaction
+composer create-project laravel/laravel "$TMP_DIR/laravel" --no-install --no-interaction --no-scripts
 rm -f "$TMP_DIR/laravel/.env"
 rm -rf "$TMP_DIR/laravel/.git"
 
