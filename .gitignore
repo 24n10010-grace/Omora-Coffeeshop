@@ -1,0 +1,28 @@
+
+# Environment dan kredensial
+/.env
+/.env.*
+!/.env.example
+
+# Dependensi
+/vendor/
+/node_modules/
+
+# Laravel generated files
+/public/build/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/bootstrap/cache/*.php
+
+# Database backup
+/backups/
+*.sql.gz
+
+# OS dan editor
+.DS_Store
+Thumbs.db
