@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "omora-invenkopi-v1",
+		"name": "InvenKopi OMORA API v1",
+		"description": "Koleksi API InvenKopi OMORA (Modul M01–M12) untuk pengujian endpoint oleh Divisi 2 dan integrasi frontend Divisi 3.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/ping",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "ping"]
+				}
+			}
+		},
+		{
+			"name": "M01 - Auth Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"supervisor_omora\",\n  \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/auth/login",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "auth", "login"]
+				}
+			}
+		},
+		{
+			"name": "M02 - Master Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/items",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "items"]
+				}
+			}
+		},
+		{
+			"name": "M03 - Master Menus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/menus",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "menus"]
+				}
+			}
+		},
+		{
+			"name": "M03 - Menu BOM Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/menus/MNU001/bom",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "menus", "MNU001", "bom"]
+				}
+			}
+		},
+		{
+			"name": "M05 - Usage Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/usage?periode=2026-11",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "usage"],
+					"query": [{ "key": "periode", "value": "2026-11" }]
+				}
+			}
+		},
+		{
+			"name": "M09 - Submit Stock Opname",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tanggal\": \"2026-11-19\",\n  \"outlet_id\": 1,\n  \"status\": \"posted\",\n  \"items\": [\n    { \"sku\": \"DRY001\", \"sisa_utuh\": 2, \"sisa_ecer\": 350 }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/stock-opnames",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "stock-opnames"]
+				}
+			}
+		},
+		{
+			"name": "M10 - Stock Variance Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/variance?periode=2026-11&outlet_id=1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "variance"],
+					"query": [
+						{ "key": "periode", "value": "2026-11" },
+						{ "key": "outlet_id", "value": "1" }
+					]
+				}
+			}
+		},
+		{
+			"name": "M11 - Inventory Alerts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/inventory/alerts",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "inventory", "alerts"]
+				}
+			}
+		},
+		{
+			"name": "M12 - Dashboard Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/dashboard/summary",
+					"host": ["{{base_url}}"],
+					"path": ["api", "v1", "dashboard", "summary"]
+				}
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		}
+	]
+}

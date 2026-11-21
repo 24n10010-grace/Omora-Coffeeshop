@@ -1,58 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# InvenKopi — Sistem Informasi Manajemen Inventaris Coffeeshop OMORA
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Informasi Manajemen Inventaris berbasis web untuk **OMORA Coffeeshop** yang dikembangkan menggunakan **Laravel 13**, **MySQL 8.x**, dan **Bootstrap 5**.
 
-## About Laravel
+Repositori ini disiapkan untuk mendukung operasional satu outlet utama dengan arsitektur basis data yang siap diskalakan ke multi-outlet di masa mendatang.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Panduan Setup Singkat (Local Development)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ikuti langkah-langkah berikut untuk menjalankan aplikasi di lingkungan lokal:
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone Repositori
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/24n10010-grace/Omora-Coffeeshop.git
+cd Omora-Coffeeshop
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Salin Konfigurasi Environment
+```bash
+cp .env.example .env
+```
+Sesuaikan konfigurasi database pada berkas `.env`:
+```ini
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_invenkopi_omora
+DB_USERNAME=invenkopi_dev
+DB_PASSWORD=
+```
 
-## Contributing
+### 3. Instalasi Dependensi
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Generate Application Key
+```bash
+php artisan key:generate
+```
 
-## Code of Conduct
+### 5. Migrasi & Seeding Database
+Jalankan migrasi seluruh tabel (18 tabel) beserta seed data master dan data uji 7 hari:
+```bash
+php artisan migrate:fresh --seed
+```
+*Catatan:*
+- `MasterDataSeeder`: Mengisi 2 outlet, 3 pengguna awal, 3 supplier, 10 SKU bahan baku, 7 menu, dan resep komposisi BOM.
+- `DemoTransactionSeeder`: Mengisi simulasi transaksi 7 hari (penjualan, penerimaan, transfer, waste, dan physical opname) yang menghasilkan verifikasi angka variance 100% presisi dengan sheet *Proto Variance*.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Jalankan Server Lokal
+Terminal 1 (Backend API & Web):
+```bash
+php artisan serve
+```
+Terminal 2 (Frontend Asset Bundler):
+```bash
+npm run dev
+```
+Akses aplikasi melalui peramban web pada alamat: `http://localhost:8000`.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🔐 Kredensial Akun Awal (Data Seeder Master)
 
-## License
+Berikut akun awal yang terdaftar secara *default* untuk pengujian hak akses (RBAC):
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Peran (Role) | Username | Password | Keterangan |
+|---|---|---|---|
+| **Owner** | `owner_omora` | `password123` | Akses eksekutif dashboard & laporan lintas outlet |
+| **Supervisor** | `supervisor_omora` | `password123` | Pengelolaan master data, resep BOM, verifikasi stock opname |
+| **Staf / Barista** | `barista_omora` | `password123` | Input form stock opname, penerimaan, transfer, dan waste |
+
+> **Perhatian:** Kredensial di atas hanya untuk keperluan pengembangan (*development*) dan pengujian lokal. Password telah di-hash menggunakan algoritma *bcrypt*.
+
+---
+
+## 📡 Dokumentasi & Koleksi API
+
+- **Kontrak Desain API Lengkap (M01–M12):** [`docs/API_DESIGN.md`](docs/API_DESIGN.md)
+- **Koleksi Postman:** [`docs/OMORA.postman_collection.json`](docs/OMORA.postman_collection.json) (Bisa langsung diimpor ke Postman untuk pengujian endpoint `/api/v1`).
+- **Diagram ERD:** [`docs/database/ERD.md`](docs/database/ERD.md) & [`docs/database/ERD.png`](docs/database/ERD.png)
+- **Skrip Skema SQL Mentah:** [`docs/database/schema.sql`](docs/database/schema.sql)
+
+---
+
+## 👥 Tim Pengembang Proyek (Divisi 2)
+
+- **Kirana Ayu Dwi Putri (24.N1.0028)** — Database Administrator & Backend Developer (PIC D2)
+- Program Studi Sistem Informasi, Universitas Katolik Soegijapranata Semarang (2026/2027)
