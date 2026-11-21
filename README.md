@@ -65,13 +65,13 @@ Akses aplikasi melalui peramban web pada alamat: `http://localhost:8000`.
 
 ## 🔐 Kredensial Akun Awal (Data Seeder Master)
 
-Sesuai dengan rancangan persona pengguna pada Laporan D3-01 & D3-03, berikut akun awal yang terdaftar untuk pengujian hak akses (RBAC):
+Berikut akun awal yang terdaftar untuk pengujian hak akses (RBAC):
 
 | Peran (Role) | Username | Password | Nama Pengguna / Keterangan |
 |---|---|---|---|
-| **Owner** | `owner_omora` | `password123` | **Budi Santoso (Owner OMORA)** — Akses eksekutif dashboard & laporan lintas outlet |
-| **Supervisor** | `supervisor_omora` | `password123` | **Michelle Aurellia (Supervisor Bar / PM)** — Pengelolaan master data, BOM, approval opname |
-| **Staf / Barista** | `barista_omora` | `password123` | **Grace Febriani S. P (Barista Konter)** — Input form stock opname, penjualan, dan mutasi |
+| **Owner** | `owner_omora` | `password123` | **Michelle Aurellia (Owner)** — Akses eksekutif dashboard & laporan lintas outlet |
+| **Supervisor** | `supervisor_omora` | `password123` | **Kirana Ayu Dwi Putri (Supervisor Bar)** — Pengelolaan master data, BOM, approval opname |
+| **Staf / Barista** | `barista_omora` | `password123` | **Grace Febriani S. P (Barista)** — Input form stock opname, penjualan shift, dan mutasi |
 
 > **Perhatian:** Kredensial di atas hanya untuk keperluan pengembangan (*development*) dan pengujian lokal. Password telah di-hash menggunakan algoritma *bcrypt*.
 

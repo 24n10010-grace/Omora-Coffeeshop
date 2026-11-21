@@ -43,18 +43,18 @@ class MasterDataSeeder extends Seeder
         );
 
         // ---------------------------------------------------------------------
-        // 2. USER (3 Akun Sesuai Desain & Wireframe Proyek OMORA)
-        // - Owner: Pak Budi / Manajemen Eksekutif OMORA (Lintas Outlet)
-        // - Supervisor: Michelle Aurellia (Supervisor Operasional Bar / PM)
-        // - Staf / Barista: Grace Febriani S. P (Barista Konter / Wireframe D3-01)
+        // 2. USER (3 Akun Sesuai Penetapan Tim Proyek):
+        // - Owner     : Michelle Aurellia (Lintas Outlet)
+        // - Supervisor: Kirana Ayu Dwi Putri (Supervisor Bar)
+        // - Barista   : Grace Febriani S. P (Staf Barista Konter)
         // Password default: password123 (bcrypt)
         // ---------------------------------------------------------------------
         User::updateOrCreate(
             ['username' => 'owner_omora'],
             [
-                'email'        => 'owner@omoracoffee.com',
+                'email'        => 'michelle@omoracoffee.com',
                 'password'     => Hash::make('password123'),
-                'nama_lengkap' => 'Budi Santoso (Owner OMORA)',
+                'nama_lengkap' => 'Michelle Aurellia (Owner)',
                 'role'         => 'owner',
                 'outlet_id'    => null, // Lintas outlet
                 'is_active'    => true,
@@ -64,9 +64,9 @@ class MasterDataSeeder extends Seeder
         User::updateOrCreate(
             ['username' => 'supervisor_omora'],
             [
-                'email'        => 'supervisor@omoracoffee.com',
+                'email'        => 'kirana@omoracoffee.com',
                 'password'     => Hash::make('password123'),
-                'nama_lengkap' => 'Michelle Aurellia (Supervisor Bar)',
+                'nama_lengkap' => 'Kirana Ayu Dwi Putri (Supervisor Bar)',
                 'role'         => 'supervisor',
                 'outlet_id'    => $outletBar->id,
                 'is_active'    => true,
@@ -76,7 +76,7 @@ class MasterDataSeeder extends Seeder
         User::updateOrCreate(
             ['username' => 'barista_omora'],
             [
-                'email'        => 'barista@omoracoffee.com',
+                'email'        => 'grace@omoracoffee.com',
                 'password'     => Hash::make('password123'),
                 'nama_lengkap' => 'Grace Febriani S. P (Barista)',
                 'role'         => 'staff',
@@ -123,7 +123,6 @@ class MasterDataSeeder extends Seeder
 
         // ---------------------------------------------------------------------
         // 4. ITEM (10 SKU Bahan Baku Proto BOM & Proto Variance)
-        // Catatan: pack_standard & stok_minimum merupakan DATA CONTOH - Asumsi realistis
         // ---------------------------------------------------------------------
         $items = [
             [
@@ -132,7 +131,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'DRY',
                 'satuan_ecer'   => 'G',
                 'satuan_utuh'   => 'PAC',
-                'pack_standard' => 1000.0000, // 1 pack = 1000 gram
+                'pack_standard' => 1000.0000,
                 'stok_minimum'  => 2000.0000,
             ],
             [
@@ -141,7 +140,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'DRY',
                 'satuan_ecer'   => 'G',
                 'satuan_utuh'   => 'PAC',
-                'pack_standard' => 500.0000, // 1 pack = 500 gram
+                'pack_standard' => 500.0000,
                 'stok_minimum'  => 1000.0000,
             ],
             [
@@ -150,7 +149,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'DRY',
                 'satuan_ecer'   => 'ML',
                 'satuan_utuh'   => 'BOX',
-                'pack_standard' => 700.0000, // 1 botol = 700 ml
+                'pack_standard' => 700.0000,
                 'stok_minimum'  => 500.0000,
             ],
             [
@@ -159,7 +158,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'DRY',
                 'satuan_ecer'   => 'ML',
                 'satuan_utuh'   => 'BOX',
-                'pack_standard' => 1000.0000, // 1 jerigen/botol = 1000 ml
+                'pack_standard' => 1000.0000,
                 'stok_minimum'  => 1500.0000,
             ],
             [
@@ -168,7 +167,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'FRS',
                 'satuan_ecer'   => 'ML',
                 'satuan_utuh'   => 'CAR',
-                'pack_standard' => 1000.0000, // 1 karton = 1000 ml
+                'pack_standard' => 1000.0000,
                 'stok_minimum'  => 5000.0000,
             ],
             [
@@ -177,7 +176,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'FRS',
                 'satuan_ecer'   => 'PC',
                 'satuan_utuh'   => 'PAC',
-                'pack_standard' => 10.0000, // 1 pack = 10 slice/lembar
+                'pack_standard' => 10.0000,
                 'stok_minimum'  => 20.0000,
             ],
             [
@@ -186,7 +185,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'FRS',
                 'satuan_ecer'   => 'G',
                 'satuan_utuh'   => 'PAC',
-                'pack_standard' => 200.0000, // 1 pack = 200 gram
+                'pack_standard' => 200.0000,
                 'stok_minimum'  => 400.0000,
             ],
             [
@@ -195,7 +194,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'PKG',
                 'satuan_ecer'   => 'PC',
                 'satuan_utuh'   => 'POC',
-                'pack_standard' => 50.0000, // 1 slop = 50 pcs
+                'pack_standard' => 50.0000,
                 'stok_minimum'  => 100.0000,
             ],
             [
@@ -204,7 +203,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'PKG',
                 'satuan_ecer'   => 'PC',
                 'satuan_utuh'   => 'POC',
-                'pack_standard' => 50.0000, // 1 slop = 50 pcs
+                'pack_standard' => 50.0000,
                 'stok_minimum'  => 100.0000,
             ],
             [
@@ -213,7 +212,7 @@ class MasterDataSeeder extends Seeder
                 'tipe_material' => 'PKG',
                 'satuan_ecer'   => 'PC',
                 'satuan_utuh'   => 'PAC',
-                'pack_standard' => 100.0000, // 1 pack = 100 pcs
+                'pack_standard' => 100.0000,
                 'stok_minimum'  => 150.0000,
             ],
         ];
@@ -251,7 +250,6 @@ class MasterDataSeeder extends Seeder
 
         // ---------------------------------------------------------------------
         // 6. BILL OF MATERIALS (BOM)
-        // Komposisi bahan per 1 porsi menu
         // ---------------------------------------------------------------------
         $recipes = [
             'MNU001' => [
