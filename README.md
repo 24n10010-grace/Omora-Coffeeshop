@@ -65,13 +65,13 @@ Akses aplikasi melalui peramban web pada alamat: `http://localhost:8000`.
 
 ## 🔐 Kredensial Akun Awal (Data Seeder Master)
 
-Berikut akun awal yang terdaftar secara *default* untuk pengujian hak akses (RBAC):
+Sesuai dengan rancangan persona pengguna pada Laporan D3-01 & D3-03, berikut akun awal yang terdaftar untuk pengujian hak akses (RBAC):
 
-| Peran (Role) | Username | Password | Keterangan |
+| Peran (Role) | Username | Password | Nama Pengguna / Keterangan |
 |---|---|---|---|
-| **Owner** | `owner_omora` | `password123` | Akses eksekutif dashboard & laporan lintas outlet |
-| **Supervisor** | `supervisor_omora` | `password123` | Pengelolaan master data, resep BOM, verifikasi stock opname |
-| **Staf / Barista** | `barista_omora` | `password123` | Input form stock opname, penerimaan, transfer, dan waste |
+| **Owner** | `owner_omora` | `password123` | **Budi Santoso (Owner OMORA)** — Akses eksekutif dashboard & laporan lintas outlet |
+| **Supervisor** | `supervisor_omora` | `password123` | **Michelle Aurellia (Supervisor Bar / PM)** — Pengelolaan master data, BOM, approval opname |
+| **Staf / Barista** | `barista_omora` | `password123` | **Grace Febriani S. P (Barista Konter)** — Input form stock opname, penjualan, dan mutasi |
 
 > **Perhatian:** Kredensial di atas hanya untuk keperluan pengembangan (*development*) dan pengujian lokal. Password telah di-hash menggunakan algoritma *bcrypt*.
 
@@ -86,7 +86,10 @@ Berikut akun awal yang terdaftar secara *default* untuk pengujian hak akses (RBA
 
 ---
 
-## 👥 Tim Pengembang Proyek (Divisi 2)
+## 👥 Tim Proyek
 
+- **Michelle Aurellia (24.N1.0021)** — Project Manager & Analis Sistem (PIC D1)
 - **Kirana Ayu Dwi Putri (24.N1.0028)** — Database Administrator & Backend Developer (PIC D2)
-- Program Studi Sistem Informasi, Universitas Katolik Soegijapranata Semarang (2026/2027)
+- **Grace Febriani S. P (24.N1.0010)** — UI/UX Designer, Frontend Developer & QA Tester (PIC D3)
+
+Program Studi Sistem Informasi, Fakultas Ilmu Komputer, Universitas Katolik Soegijapranata Semarang (2026/2027)

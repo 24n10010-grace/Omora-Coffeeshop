@@ -43,15 +43,18 @@ class MasterDataSeeder extends Seeder
         );
 
         // ---------------------------------------------------------------------
-        // 2. USER (3 Akun: Owner, Supervisor, Staff/Barista)
-        // Password default: password123 (bcrypt) - didokumentasikan di README
+        // 2. USER (3 Akun Sesuai Desain & Wireframe Proyek OMORA)
+        // - Owner: Pak Budi / Manajemen Eksekutif OMORA (Lintas Outlet)
+        // - Supervisor: Michelle Aurellia (Supervisor Operasional Bar / PM)
+        // - Staf / Barista: Grace Febriani S. P (Barista Konter / Wireframe D3-01)
+        // Password default: password123 (bcrypt)
         // ---------------------------------------------------------------------
         User::updateOrCreate(
             ['username' => 'owner_omora'],
             [
                 'email'        => 'owner@omoracoffee.com',
                 'password'     => Hash::make('password123'),
-                'nama_lengkap' => 'Grace Febriani S. P (Owner)',
+                'nama_lengkap' => 'Budi Santoso (Owner OMORA)',
                 'role'         => 'owner',
                 'outlet_id'    => null, // Lintas outlet
                 'is_active'    => true,
@@ -75,7 +78,7 @@ class MasterDataSeeder extends Seeder
             [
                 'email'        => 'barista@omoracoffee.com',
                 'password'     => Hash::make('password123'),
-                'nama_lengkap' => 'Kirana Ayu Dwi Putri (Barista Shift Pagi)',
+                'nama_lengkap' => 'Grace Febriani S. P (Barista)',
                 'role'         => 'staff',
                 'outlet_id'    => $outletBar->id,
                 'is_active'    => true,
@@ -130,7 +133,7 @@ class MasterDataSeeder extends Seeder
                 'satuan_ecer'   => 'G',
                 'satuan_utuh'   => 'PAC',
                 'pack_standard' => 1000.0000, // 1 pack = 1000 gram
-                'stok_minimum'  => 2000.0000, // min 2000 gram
+                'stok_minimum'  => 2000.0000,
             ],
             [
                 'sku'           => 'DRY002',
@@ -251,14 +254,12 @@ class MasterDataSeeder extends Seeder
         // Komposisi bahan per 1 porsi menu
         // ---------------------------------------------------------------------
         $recipes = [
-            // MNU001 Americano: DRY001 18, PKG001 1, PKG002 1, PKG003 1
             'MNU001' => [
                 ['sku' => 'DRY001', 'qty' => 18.0000, 'satuan' => 'G'],
                 ['sku' => 'PKG001', 'qty' => 1.0000,  'satuan' => 'PC'],
                 ['sku' => 'PKG002', 'qty' => 1.0000,  'satuan' => 'PC'],
                 ['sku' => 'PKG003', 'qty' => 1.0000,  'satuan' => 'PC'],
             ],
-            // MNU002 Latte: DRY001 18, FRS001 150, PKG001 1, PKG002 1, PKG003 1
             'MNU002' => [
                 ['sku' => 'DRY001', 'qty' => 18.0000,  'satuan' => 'G'],
                 ['sku' => 'FRS001', 'qty' => 150.0000, 'satuan' => 'ML'],
@@ -266,7 +267,6 @@ class MasterDataSeeder extends Seeder
                 ['sku' => 'PKG002', 'qty' => 1.0000,   'satuan' => 'PC'],
                 ['sku' => 'PKG003', 'qty' => 1.0000,   'satuan' => 'PC'],
             ],
-            // MNU003 Caramel Latte: DRY001 18, FRS001 150, DRY003 20, PKG001 1, PKG002 1, PKG003 1
             'MNU003' => [
                 ['sku' => 'DRY001', 'qty' => 18.0000,  'satuan' => 'G'],
                 ['sku' => 'FRS001', 'qty' => 150.0000, 'satuan' => 'ML'],
@@ -275,7 +275,6 @@ class MasterDataSeeder extends Seeder
                 ['sku' => 'PKG002', 'qty' => 1.0000,   'satuan' => 'PC'],
                 ['sku' => 'PKG003', 'qty' => 1.0000,   'satuan' => 'PC'],
             ],
-            // MNU004 Es Kopi Susu Aren: DRY001 18, FRS001 100, DRY004 25, PKG001 1, PKG002 1, PKG003 1
             'MNU004' => [
                 ['sku' => 'DRY001', 'qty' => 18.0000,  'satuan' => 'G'],
                 ['sku' => 'FRS001', 'qty' => 100.0000, 'satuan' => 'ML'],
@@ -284,14 +283,12 @@ class MasterDataSeeder extends Seeder
                 ['sku' => 'PKG002', 'qty' => 1.0000,   'satuan' => 'PC'],
                 ['sku' => 'PKG003', 'qty' => 1.0000,   'satuan' => 'PC'],
             ],
-            // MNU005 Cappuccino: DRY001 18, FRS001 120, PKG001 1, PKG002 1
             'MNU005' => [
                 ['sku' => 'DRY001', 'qty' => 18.0000,  'satuan' => 'G'],
                 ['sku' => 'FRS001', 'qty' => 120.0000, 'satuan' => 'ML'],
                 ['sku' => 'PKG001', 'qty' => 1.0000,   'satuan' => 'PC'],
                 ['sku' => 'PKG002', 'qty' => 1.0000,   'satuan' => 'PC'],
             ],
-            // MNU006 Chocolate: DRY002 30, FRS001 150, PKG001 1, PKG002 1, PKG003 1
             'MNU006' => [
                 ['sku' => 'DRY002', 'qty' => 30.0000,  'satuan' => 'G'],
                 ['sku' => 'FRS001', 'qty' => 150.0000, 'satuan' => 'ML'],
@@ -299,7 +296,6 @@ class MasterDataSeeder extends Seeder
                 ['sku' => 'PKG002', 'qty' => 1.0000,   'satuan' => 'PC'],
                 ['sku' => 'PKG003', 'qty' => 1.0000,   'satuan' => 'PC'],
             ],
-            // MNU007 Roti Bakar Cokelat: FRS002 2, FRS003 10, DRY002 15
             'MNU007' => [
                 ['sku' => 'FRS002', 'qty' => 2.0000,  'satuan' => 'PC'],
                 ['sku' => 'FRS003', 'qty' => 10.0000, 'satuan' => 'G'],

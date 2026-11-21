@@ -91,6 +91,7 @@ class DemoTransactionSeeder extends Seeder
         // 2. PENJUALAN 7 HARI (Aggregated Total Menu Terjual)
         // Americano 120, Latte 150, Caramel Latte 90, Es Kopi Susu Aren 200,
         // Cappuccino 80, Chocolate 60, Roti Bakar Cokelat 40
+        // Dicatat oleh Barista (Grace)
         // ---------------------------------------------------------------------
         $penjualan = Penjualan::updateOrCreate(
             ['no_dokumen' => 'SAL-202611-001'],
@@ -161,7 +162,7 @@ class DemoTransactionSeeder extends Seeder
             $qtyUtuh = floor($totalEcer / $item->pack_standard);
             $qtyEcer = $totalEcer - ($qtyUtuh * $item->pack_standard);
 
-            $rcvDetail = PenerimaanDetail::updateOrCreate(
+            PenerimaanDetail::updateOrCreate(
                 [
                     'penerimaan_id' => $penerimaan->id,
                     'item_id'       => $item->id,
@@ -225,7 +226,7 @@ class DemoTransactionSeeder extends Seeder
 
         // ---------------------------------------------------------------------
         // 5. WASTE (Limbah / Terbuang)
-        // DRY001: 40 | DRY004: 100 | FRS001: 600 | FRS002: 4 | PKG001: 5
+        // Dicatat oleh Barista (Grace)
         // ---------------------------------------------------------------------
         $wastes = [
             'DRY001' => ['qty' => 40.0000,  'alasan' => 'Tumpah saat kalibrasi grinder'],
@@ -247,13 +248,14 @@ class DemoTransactionSeeder extends Seeder
                     'user_id'   => $userBarista->id,
                     'qty_ecer'  => $w['qty'],
                     'alasan'    => $w['alasan'],
-                    'catatan'   => 'Dicatat pada shift siang',
+                    'catatan'   => 'Dicatat oleh Barista pada shift siang',
                 ]
             );
         }
 
         // ---------------------------------------------------------------------
         // 6. STOCK OPNAME (PHYSICAL INVENTORY COUNT)
+        // Dihitung oleh Barista (Grace) sesuai Wireframe M09 Laporan D3-01
         // ---------------------------------------------------------------------
         $stockOpname = StockOpname::updateOrCreate(
             ['no_dokumen' => 'PI-20261119-001'],
@@ -262,11 +264,10 @@ class DemoTransactionSeeder extends Seeder
                 'outlet_id' => $outletBar->id,
                 'user_id'   => $userBarista->id,
                 'status'    => 'posted',
-                'catatan'   => 'Stock Opname Akhir Periode 7 Hari',
+                'catatan'   => 'Stock Opname Akhir Shift oleh Barista Grace',
             ]
         );
 
-        // Nilai PI Count dari Proto Variance:
         $piCounts = [
             'DRY001' => ['utuh' => 2, 'ecer' => 350, 'total' => 2350.0000],
             'DRY002' => ['utuh' => 2, 'ecer' => 80,  'total' => 1080.0000],
