@@ -15,7 +15,7 @@
   <!-- Banner Judul -->
   <rect x="25" y="20" width="850" height="55" rx="8" fill="#0F172A"/>
   <text x="450" y="45" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#38BDF8" text-anchor="middle" letter-spacing="0.5">ENTITY RELATIONSHIP DIAGRAM (ERD) — INVENKOPI OMORA</text>
-  <text x="450" y="63" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Arsitektur Basis Data Inventaris Coffeeshop (18 Tabel, 3NF, Skalabilitas Multi-Outlet) &bull; Format Portrait</text>
+  <text x="450" y="63" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Arsitektur Basis Data Inventaris Coffeeshop (18 Tabel, 3NF, Skalabilitas Multi-Outlet) • Format Portrait</text>
 
   <!-- Legend -->
   <g transform="translate(25, 83)">
@@ -416,14 +416,14 @@
 
     <!-- Kolom Kiri -->
     <text x="15" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">1. Pola Header-Detail Transaksi</text>
-    <text x="15" y="68" font-family="sans-serif" font-size="10" fill="#475569">• Penjualan (t_penjualan &rarr; t_penjualan_detail), Penerimaan (t_penerimaan &rarr; t_penerimaan_detail)</text>
-    <text x="15" y="84" font-family="sans-serif" font-size="10" fill="#475569">• Transfer Antar-Outlet (t_transfer &rarr; t_transfer_detail), Stock Opname (t_stock_opname &rarr; detail)</text>
+    <text x="15" y="68" font-family="sans-serif" font-size="10" fill="#475569">• Penjualan (t_penjualan → t_penjualan_detail), Penerimaan (t_penerimaan → t_penerimaan_detail)</text>
+    <text x="15" y="84" font-family="sans-serif" font-size="10" fill="#475569">• Transfer Antar-Outlet (t_transfer → t_transfer_detail), Stock Opname (t_stock_opname → detail)</text>
     <text x="15" y="100" font-family="sans-serif" font-size="10" fill="#475569">• Limbah Bar (t_waste) dirancang flat 1-level agar barista dapat mencatat kilat saat jam sibuk bar.</text>
 
     <text x="15" y="125" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">2. Integritas Relasi &amp; Constraint Multi-Outlet</text>
-    <text x="15" y="143" font-family="sans-serif" font-size="10" fill="#475569">• Seluruh relasi Master &rarr; Transaksi memakai ON DELETE RESTRICT (data master terlindungi historinya).</text>
+    <text x="15" y="143" font-family="sans-serif" font-size="10" fill="#475569">• Seluruh relasi Master → Transaksi memakai ON DELETE RESTRICT (data master terlindungi historinya).</text>
     <text x="15" y="159" font-family="sans-serif" font-size="10" fill="#475569">• Kolom outlet_id hadir di seluruh tabel transaksi dan mutasi (siap multi-cabang tanpa refactoring skema).</text>
-    <text x="15" y="175" font-family="sans-serif" font-size="10" fill="#475569">• Transfer memiliki dual FK ke m_outlet (outlet_asal_id &ne; outlet_tujuan_id) dengan constraint validasi.</text>
+    <text x="15" y="175" font-family="sans-serif" font-size="10" fill="#475569">• Transfer memiliki dual FK ke m_outlet (outlet_asal_id ≠ outlet_tujuan_id) dengan constraint validasi.</text>
 
     <text x="15" y="200" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">3. Ketentuan Satuan &amp; Tipe Data Presisi</text>
     <text x="15" y="218" font-family="sans-serif" font-size="10" fill="#475569">• Seluruh kuantitas transaksi &amp; saldo stok menggunakan DECIMAL(12,2) dalam satuan eceran (G, ML, PC).</text>
@@ -434,20 +434,20 @@
     <text x="515" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">4. Formula Komputasi Inventaris (Backend Service)</text>
 
     <rect x="515" y="60" width="335" height="38" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
-    <text x="525" y="76" font-family="monospace" font-size="9.5" font-weight="bold" fill="#1E40AF">Usage = &Sigma; (Qty Jual Menu &times; Qty BOM Ecer)</text>
+    <text x="525" y="76" font-family="monospace" font-size="9.5" font-weight="bold" fill="#1E40AF">Usage = Σ (Qty Jual Menu × Qty BOM Ecer)</text>
     <text x="525" y="90" font-family="sans-serif" font-size="8.5" fill="#3B82F6">Dihitung otomatis saat rekap harian/mingguan dari penjualan menu</text>
 
     <rect x="515" y="105" width="335" height="38" rx="4" fill="#FEFCE8" stroke="#FEF08A"/>
-    <text x="525" y="121" font-family="monospace" font-size="9" font-weight="bold" fill="#854D0E">Std.End = MAX(0; Begin + Rcv + TrfIn - TrfOut - Waste - Usage)</text>
+    <text x="525" y="121" font-family="monospace" font-size="9.5" font-weight="bold" fill="#854D0E">Std.End = MAX(0; Begin + Rcv + TrfIn - TrfOut - Waste - Usage)</text>
     <text x="525" y="135" font-family="sans-serif" font-size="8.5" fill="#A16207">Saldo akhir teoritis sistem; floor nol mencegah nilai stok negatif</text>
 
     <rect x="515" y="150" width="335" height="38" rx="4" fill="#F0FDF4" stroke="#BBF7D0"/>
-    <text x="525" y="166" font-family="monospace" font-size="9.5" font-weight="bold" fill="#166534">PI Count = (Sisa Utuh &times; Isi/Utuh) + Sisa Ecer</text>
+    <text x="525" y="166" font-family="monospace" font-size="9.5" font-weight="bold" fill="#166534">PI Count = (Sisa Utuh × Isi/Utuh) + Sisa Ecer</text>
     <text x="525" y="180" font-family="sans-serif" font-size="8.5" fill="#15803D">Hasil hitung fisik bahan di bar saat closing shift</text>
 
     <rect x="515" y="195" width="335" height="38" rx="4" fill="#FAF5FF" stroke="#E9D5FF"/>
     <text x="525" y="211" font-family="monospace" font-size="9.5" font-weight="bold" fill="#6B21A8">Variance = PI Count - Std. End Stock</text>
-    <text x="525" y="225" font-family="monospace" font-size="8.5" fill="#7E22CE">%Variance = Variance / Std. End Stock &times; 100%</text>
+    <text x="525" y="225" font-family="monospace" font-size="8.5" fill="#7E22CE">%Variance = Variance / Std. End Stock × 100%</text>
 
     <rect x="515" y="240" width="335" height="38" rx="4" fill="#FDF2F8" stroke="#FBCFE8"/>
     <text x="525" y="256" font-family="monospace" font-size="9.5" font-weight="bold" fill="#9D174D">DOI = PI Count / (Usage Periode / Hari)</text>
@@ -456,11 +456,11 @@
     <!-- Klasifikasi -->
     <text x="515" y="298" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#0F172A">Toleransi:</text>
     <text x="575" y="298" font-family="sans-serif" font-size="9" fill="#16A34A">No Var (0%)</text>
-    <text x="645" y="298" font-family="sans-serif" font-size="9" fill="#CA8A04">Low (&le;5%)</text>
+    <text x="645" y="298" font-family="sans-serif" font-size="9" fill="#CA8A04">Low (≤5%)</text>
     <text x="710" y="298" font-family="sans-serif" font-size="9" fill="#EA580C">Med (5-20%)</text>
     <text x="785" y="298" font-family="sans-serif" font-size="9" fill="#DC2626">High (&gt;20%)</text>
   </g>
 
   <!-- Watermark / Footer Info -->
-  <text x="450" y="1410" font-family="sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">InvenKopi OMORA &bull; Divisi 2 Database &amp; Backend &bull; Didesain khusus untuk tampilan Halaman Dokumen Portrait A4</text>
+  <text x="450" y="1410" font-family="sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">InvenKopi OMORA • Divisi 2 Database &amp; Backend • Didesain khusus untuk tampilan Halaman Dokumen Portrait A4</text>
 </svg>
