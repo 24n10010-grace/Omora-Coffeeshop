@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1420" width="900" height="1420">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1420" fill="#FFFFFF"/>
+
+  <!-- Banner Judul -->
+  <rect x="25" y="20" width="850" height="55" rx="8" fill="#0F172A"/>
+  <text x="450" y="45" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#38BDF8" text-anchor="middle" letter-spacing="0.5">ENTITY RELATIONSHIP DIAGRAM (ERD) — INVENKOPI OMORA</text>
+  <text x="450" y="63" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Arsitektur Basis Data Inventaris Coffeeshop (18 Tabel, 3NF, Skalabilitas Multi-Outlet) &bull; Format Portrait</text>
+
+  <!-- Legend -->
+  <g transform="translate(25, 83)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#1E3A8A"/>
+    <text x="18" y="10" font-family="sans-serif" font-size="9.5" fill="#334155" font-weight="600">Master Data (5)</text>
+
+    <rect x="150" y="0" width="12" height="12" rx="2" fill="#065F46"/>
+    <text x="168" y="10" font-family="sans-serif" font-size="9.5" fill="#334155" font-weight="600">Resep &amp; BOM (1)</text>
+
+    <rect x="300" y="0" width="12" height="12" rx="2" fill="#854D0E"/>
+    <text x="318" y="10" font-family="sans-serif" font-size="9.5" fill="#334155" font-weight="600">Transaksi &amp; Detail (7)</text>
+
+    <rect x="470" y="0" width="12" height="12" rx="2" fill="#581C87"/>
+    <text x="488" y="10" font-family="sans-serif" font-size="9.5" fill="#334155" font-weight="600">Kontrol Stok, Opname &amp; Audit (5)</text>
+
+    <text x="730" y="10" font-family="sans-serif" font-size="9.5" fill="#64748B" font-style="italic">🔑 Primary Key  |  🔗 Foreign Key</text>
+  </g>
+
+  <!-- Garis Relasi -->
+  <g id="relations">
+    
+  <path d="M 102 110 L 102 85 L 272 85 L 272 110" stroke="#3B82F6" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="256" y="78" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#3B82F6" stroke-width="0.8"/>
+  <text x="272" y="87.5" font-family="sans-serif" font-size="7.5" fill="#3B82F6" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 795 250 L 795 320" stroke="#10B981" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="779" y="313" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#10B981" stroke-width="0.8"/>
+  <text x="795" y="322.5" font-family="sans-serif" font-size="7.5" fill="#10B981" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 617 250 L 617 290 L 750 290 L 750 320" stroke="#10B981" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="734" y="283" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#10B981" stroke-width="0.8"/>
+  <text x="750" y="292.5" font-family="sans-serif" font-size="7.5" fill="#10B981" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 102 455 L 102 520" stroke="#EAB308" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="86" y="513" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#EAB308" stroke-width="0.8"/>
+  <text x="102" y="522.5" font-family="sans-serif" font-size="7.5" fill="#EAB308" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 715 200 L 700 200 L 700 560 L 180 560" stroke="#64748B" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="684" y="553" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#64748B" stroke-width="0.8"/>
+  <text x="700" y="562.5" font-family="sans-serif" font-size="7.5" fill="#64748B" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 272 455 L 272 520" stroke="#EAB308" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="256" y="513" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#EAB308" stroke-width="0.8"/>
+  <text x="272" y="522.5" font-family="sans-serif" font-size="7.5" fill="#EAB308" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 442 250 L 442 285 L 310 285 L 310 320" stroke="#3B82F6" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="294" y="278" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#3B82F6" stroke-width="0.8"/>
+  <text x="310" y="287.5" font-family="sans-serif" font-size="7.5" fill="#3B82F6" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 442 455 L 442 520" stroke="#EAB308" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="426" y="513" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#EAB308" stroke-width="0.8"/>
+  <text x="442" y="522.5" font-family="sans-serif" font-size="7.5" fill="#EAB308" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 580 250 L 580 300 L 600 300 L 600 320" stroke="#3B82F6" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="584" y="293" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#3B82F6" stroke-width="0.8"/>
+  <text x="600" y="302.5" font-family="sans-serif" font-size="7.5" fill="#3B82F6" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 550 250 L 550 500 L 330 500 L 330 520" stroke="#3B82F6" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="314" y="493" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#3B82F6" stroke-width="0.8"/>
+  <text x="330" y="502.5" font-family="sans-serif" font-size="7.5" fill="#3B82F6" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 565 250 L 565 510 L 500 510 L 500 520" stroke="#3B82F6" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="484" y="503" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#3B82F6" stroke-width="0.8"/>
+  <text x="500" y="512.5" font-family="sans-serif" font-size="7.5" fill="#3B82F6" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 395 790 L 410 790" stroke="#A855F7" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="394" y="783" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#A855F7" stroke-width="0.8"/>
+  <text x="410" y="792.5" font-family="sans-serif" font-size="7.5" fill="#A855F7" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 670 250 L 670 710 L 115 710 L 115 730" stroke="#A855F7" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="99" y="703" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#A855F7" stroke-width="0.8"/>
+  <text x="115" y="712.5" font-family="sans-serif" font-size="7.5" fill="#A855F7" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 670 710 L 522 710 L 522 730" stroke="#A855F7" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="506" y="703" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#A855F7" stroke-width="0.8"/>
+  <text x="522" y="712.5" font-family="sans-serif" font-size="7.5" fill="#A855F7" text-anchor="middle" font-weight="bold">1:N</text>
+
+  <path d="M 670 710 L 762 710 L 762 730" stroke="#A855F7" stroke-width="1.3" fill="none" marker-end="url(#arrow)" />
+  <rect x="746" y="703" width="32" height="13" fill="#FFFFFF" rx="2" stroke="#A855F7" stroke-width="0.8"/>
+  <text x="762" y="712.5" font-family="sans-serif" font-size="7.5" fill="#A855F7" text-anchor="middle" font-weight="bold">1:N</text>
+  </g>
+
+  <!-- Tabel Entitas -->
+  <g id="tables">
+    
+  <!-- m_user -->
+  <g id="table_m_user">
+    <rect x="25" y="110" width="155" height="140" rx="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 25 116 A 6 6 0 0 1 31 110 L 174 110 A 6 6 0 0 1 180 116 L 180 136 L 25 136 Z" fill="#1E3A8A"/>
+    <text x="33" y="127" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">m_user</text>
+    <rect x="130" y="115" width="44" height="15" rx="3" fill="#DBEAFE"/>
+    <text x="152" y="126" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#1E40AF" text-anchor="middle">MASTER</text>
+    <line x1="25" y1="136" x2="180" y2="136" stroke="#3B82F6" stroke-width="1"/>
+    <text x="33" y="151" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_user : INT</text>
+    <text x="33" y="166" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="33" y="181" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• username : VARCHAR</text>
+    <text x="33" y="196" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• email : VARCHAR</text>
+    <text x="33" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• password_hash</text>
+    <text x="33" y="226" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• role : ENUM</text>
+    <text x="33" y="241" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• is_active : BOOL</text>
+  </g>
+
+  <!-- m_outlet -->
+  <g id="table_m_outlet">
+    <rect x="195" y="110" width="155" height="140" rx="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 195 116 A 6 6 0 0 1 201 110 L 344 110 A 6 6 0 0 1 350 116 L 350 136 L 195 136 Z" fill="#1E3A8A"/>
+    <text x="203" y="127" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">m_outlet</text>
+    <rect x="300" y="115" width="44" height="15" rx="3" fill="#DBEAFE"/>
+    <text x="322" y="126" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#1E40AF" text-anchor="middle">MASTER</text>
+    <line x1="195" y1="136" x2="350" y2="136" stroke="#3B82F6" stroke-width="1"/>
+    <text x="203" y="151" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_outlet : INT</text>
+    <text x="203" y="166" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• kode_outlet : VARCHAR</text>
+    <text x="203" y="181" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• nama_outlet : VARCHAR</text>
+    <text x="203" y="196" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• alamat : TEXT</text>
+    <text x="203" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_telepon : VARCHAR</text>
+    <text x="203" y="226" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• is_active : BOOL</text>
+    <text x="203" y="241" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• created_at</text>
+  </g>
+
+  <!-- m_supplier -->
+  <g id="table_m_supplier">
+    <rect x="365" y="110" width="155" height="140" rx="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 365 116 A 6 6 0 0 1 371 110 L 514 110 A 6 6 0 0 1 520 116 L 520 136 L 365 136 Z" fill="#1E3A8A"/>
+    <text x="373" y="127" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">m_supplier</text>
+    <rect x="470" y="115" width="44" height="15" rx="3" fill="#DBEAFE"/>
+    <text x="492" y="126" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#1E40AF" text-anchor="middle">MASTER</text>
+    <line x1="365" y1="136" x2="520" y2="136" stroke="#3B82F6" stroke-width="1"/>
+    <text x="373" y="151" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_supplier : INT</text>
+    <text x="373" y="166" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• kode_supplier : VARCHAR</text>
+    <text x="373" y="181" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• nama_supplier : VARCHAR</text>
+    <text x="373" y="196" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• kontak_person</text>
+    <text x="373" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_telepon : VARCHAR</text>
+    <text x="373" y="226" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• is_active : BOOL</text>
+    <text x="373" y="241" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• created_at</text>
+  </g>
+
+  <!-- m_item -->
+  <g id="table_m_item">
+    <rect x="535" y="110" width="165" height="140" rx="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 535 116 A 6 6 0 0 1 541 110 L 694 110 A 6 6 0 0 1 700 116 L 700 136 L 535 136 Z" fill="#1E3A8A"/>
+    <text x="543" y="127" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">m_item</text>
+    <rect x="650" y="115" width="44" height="15" rx="3" fill="#DBEAFE"/>
+    <text x="672" y="126" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#1E40AF" text-anchor="middle">MASTER</text>
+    <line x1="535" y1="136" x2="700" y2="136" stroke="#3B82F6" stroke-width="1"/>
+    <text x="543" y="151" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 sku : VARCHAR(10)</text>
+    <text x="543" y="166" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• nama_material : VARCHAR</text>
+    <text x="543" y="181" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tipe : ENUM(DRY,FRS..)</text>
+    <text x="543" y="196" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• uom_ecer : (G,ML,PC)</text>
+    <text x="543" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• uom_utuh : (PAC,CAR)</text>
+    <text x="543" y="226" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• isi_per_utuh : DEC</text>
+    <text x="543" y="241" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• stok_minimum : DEC</text>
+  </g>
+
+  <!-- m_menu -->
+  <g id="table_m_menu">
+    <rect x="715" y="110" width="160" height="140" rx="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 715 116 A 6 6 0 0 1 721 110 L 869 110 A 6 6 0 0 1 875 116 L 875 136 L 715 136 Z" fill="#1E3A8A"/>
+    <text x="723" y="127" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">m_menu</text>
+    <rect x="825" y="115" width="44" height="15" rx="3" fill="#DBEAFE"/>
+    <text x="847" y="126" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#1E40AF" text-anchor="middle">MASTER</text>
+    <line x1="715" y1="136" x2="875" y2="136" stroke="#3B82F6" stroke-width="1"/>
+    <text x="723" y="151" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 kode_menu : VARCHAR</text>
+    <text x="723" y="166" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• nama_menu : VARCHAR</text>
+    <text x="723" y="181" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• kategori : ENUM</text>
+    <text x="723" y="196" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• harga_jual : DEC</text>
+    <text x="723" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• is_active : BOOL</text>
+    <text x="723" y="226" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• created_at</text>
+    <text x="723" y="241" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• updated_at</text>
+  </g>
+
+  <!-- t_bom -->
+  <g id="table_t_bom">
+    <rect x="715" y="320" width="160" height="115" rx="6" fill="#F0FDF4" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 715 326 A 6 6 0 0 1 721 320 L 869 320 A 6 6 0 0 1 875 326 L 875 346 L 715 346 Z" fill="#065F46"/>
+    <text x="723" y="337" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_bom</text>
+    <rect x="825" y="325" width="44" height="15" rx="3" fill="#D1FAE5"/>
+    <text x="847" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#065F46" text-anchor="middle">RESEP</text>
+    <line x1="715" y1="346" x2="875" y2="346" stroke="#10B981" stroke-width="1"/>
+    <text x="723" y="361" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_bom : INT</text>
+    <text x="723" y="376" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 kode_menu : VARCHAR</text>
+    <text x="723" y="391" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="723" y="406" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_per_porsi : DEC</text>
+    <text x="723" y="421" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• catatan : TEXT</text>
+    <text x="723" y="436" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• created_at</text>
+  </g>
+
+  <!-- t_penjualan -->
+  <g id="table_t_penjualan">
+    <rect x="25" y="320" width="155" height="135" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 25 326 A 6 6 0 0 1 31 320 L 174 320 A 6 6 0 0 1 180 326 L 180 346 L 25 346 Z" fill="#854D0E"/>
+    <text x="33" y="337" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_penjualan</text>
+    <rect x="130" y="325" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="152" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">TRX</text>
+    <line x1="25" y1="346" x2="180" y2="346" stroke="#EAB308" stroke-width="1"/>
+    <text x="33" y="361" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_penjualan : INT</text>
+    <text x="33" y="376" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_transaksi : VARCHAR</text>
+    <text x="33" y="391" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal : DATE</text>
+    <text x="33" y="406" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="33" y="421" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+    <text x="33" y="436" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• total_cup : INT</text>
+    <text x="33" y="451" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• total_omzet : DEC</text>
+  </g>
+
+  <!-- t_penerimaan -->
+  <g id="table_t_penerimaan">
+    <rect x="195" y="320" width="155" height="135" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 195 326 A 6 6 0 0 1 201 320 L 344 320 A 6 6 0 0 1 350 326 L 350 346 L 195 346 Z" fill="#854D0E"/>
+    <text x="203" y="337" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_penerimaan</text>
+    <rect x="300" y="325" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="322" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">TRX</text>
+    <line x1="195" y1="346" x2="350" y2="346" stroke="#EAB308" stroke-width="1"/>
+    <text x="203" y="361" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_penerimaan : INT</text>
+    <text x="203" y="376" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_dokumen : VARCHAR</text>
+    <text x="203" y="391" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal : DATE</text>
+    <text x="203" y="406" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="203" y="421" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 supplier_id : INT (FK)</text>
+    <text x="203" y="436" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+    <text x="203" y="451" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• status : VARCHAR</text>
+  </g>
+
+  <!-- t_transfer -->
+  <g id="table_t_transfer">
+    <rect x="365" y="320" width="155" height="135" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 365 326 A 6 6 0 0 1 371 320 L 514 320 A 6 6 0 0 1 520 326 L 520 346 L 365 346 Z" fill="#854D0E"/>
+    <text x="373" y="337" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_transfer</text>
+    <rect x="470" y="325" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="492" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">TRX</text>
+    <line x1="365" y1="346" x2="520" y2="346" stroke="#EAB308" stroke-width="1"/>
+    <text x="373" y="361" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_transfer : INT</text>
+    <text x="373" y="376" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_transfer : VARCHAR</text>
+    <text x="373" y="391" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal : DATE</text>
+    <text x="373" y="406" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_asal_id : INT</text>
+    <text x="373" y="421" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_tujuan_id: INT</text>
+    <text x="373" y="436" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+    <text x="373" y="451" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• status : VARCHAR</text>
+  </g>
+
+  <!-- t_waste -->
+  <g id="table_t_waste">
+    <rect x="535" y="320" width="165" height="135" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 535 326 A 6 6 0 0 1 541 320 L 694 320 A 6 6 0 0 1 700 326 L 700 346 L 535 346 Z" fill="#854D0E"/>
+    <text x="543" y="337" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_waste</text>
+    <rect x="650" y="325" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="672" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">TRX</text>
+    <line x1="535" y1="346" x2="700" y2="346" stroke="#EAB308" stroke-width="1"/>
+    <text x="543" y="361" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_waste : INT</text>
+    <text x="543" y="376" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_waste : VARCHAR</text>
+    <text x="543" y="391" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal : DATE</text>
+    <text x="543" y="406" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="543" y="421" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+    <text x="543" y="436" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="543" y="451" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_waste : DEC</text>
+    <text x="543" y="466" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• alasan : ENUM</text>
+  </g>
+
+  <!-- t_penjualan_detail -->
+  <g id="table_t_penjualan_detail">
+    <rect x="25" y="520" width="155" height="115" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 25 526 A 6 6 0 0 1 31 520 L 174 520 A 6 6 0 0 1 180 526 L 180 546 L 25 546 Z" fill="#854D0E"/>
+    <text x="33" y="537" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_penjualan_detail</text>
+    <rect x="130" y="525" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="152" y="536" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">DETAIL</text>
+    <line x1="25" y1="546" x2="180" y2="546" stroke="#EAB308" stroke-width="1"/>
+    <text x="33" y="561" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_penjualan_detail</text>
+    <text x="33" y="576" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 penjualan_id : INT</text>
+    <text x="33" y="591" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 kode_menu : VARCHAR</text>
+    <text x="33" y="606" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_terjual : INT</text>
+    <text x="33" y="621" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• harga_satuan : DEC</text>
+    <text x="33" y="636" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• subtotal : DEC</text>
+  </g>
+
+  <!-- t_penerimaan_detail -->
+  <g id="table_t_penerimaan_detail">
+    <rect x="195" y="520" width="155" height="125" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 195 526 A 6 6 0 0 1 201 520 L 344 520 A 6 6 0 0 1 350 526 L 350 546 L 195 546 Z" fill="#854D0E"/>
+    <text x="203" y="537" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_penerimaan_detail</text>
+    <rect x="300" y="525" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="322" y="536" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">DETAIL</text>
+    <line x1="195" y1="546" x2="350" y2="546" stroke="#EAB308" stroke-width="1"/>
+    <text x="203" y="561" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_penerimaan_detail</text>
+    <text x="203" y="576" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 penerimaan_id : INT</text>
+    <text x="203" y="591" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="203" y="606" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_utuh : DEC</text>
+    <text x="203" y="621" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• isi_per_utuh : DEC</text>
+    <text x="203" y="636" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_ecer : DEC</text>
+    <text x="203" y="651" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tgl_kadaluwarsa</text>
+  </g>
+
+  <!-- t_transfer_detail -->
+  <g id="table_t_transfer_detail">
+    <rect x="365" y="520" width="155" height="115" rx="6" fill="#FEFCE8" stroke="#EAB308" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 365 526 A 6 6 0 0 1 371 520 L 514 520 A 6 6 0 0 1 520 526 L 520 546 L 365 546 Z" fill="#854D0E"/>
+    <text x="373" y="537" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_transfer_detail</text>
+    <rect x="470" y="525" width="44" height="15" rx="3" fill="#FEF9C3"/>
+    <text x="492" y="536" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#854D0E" text-anchor="middle">DETAIL</text>
+    <line x1="365" y1="546" x2="520" y2="546" stroke="#EAB308" stroke-width="1"/>
+    <text x="373" y="561" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_transfer_detail</text>
+    <text x="373" y="576" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 transfer_id : INT</text>
+    <text x="373" y="591" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="373" y="606" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_transfer_ecer</text>
+    <text x="373" y="621" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• catatan : TEXT</text>
+    <text x="373" y="636" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• created_at</text>
+  </g>
+
+  <!-- r_begin_stock -->
+  <g id="table_r_begin_stock">
+    <rect x="25" y="730" width="180" height="135" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 25 736 A 6 6 0 0 1 31 730 L 199 730 A 6 6 0 0 1 205 736 L 205 756 L 25 756 Z" fill="#581C87"/>
+    <text x="33" y="747" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">r_begin_stock</text>
+    <rect x="155" y="735" width="44" height="15" rx="3" fill="#F3E8FF"/>
+    <text x="177" y="746" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#6B21A8" text-anchor="middle">STOK</text>
+    <line x1="25" y1="756" x2="205" y2="756" stroke="#A855F7" stroke-width="1"/>
+    <text x="33" y="771" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_begin_stock : INT</text>
+    <text x="33" y="786" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="33" y="801" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="33" y="816" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• periode_tahun : INT</text>
+    <text x="33" y="831" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• periode_bulan : INT</text>
+    <text x="33" y="846" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• periode_ke : INT</text>
+    <text x="33" y="861" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_begin_ecer : DEC</text>
+    <text x="33" y="876" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+  </g>
+
+  <!-- t_stock_opname -->
+  <g id="table_t_stock_opname">
+    <rect x="220" y="730" width="175" height="135" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 220 736 A 6 6 0 0 1 226 730 L 389 730 A 6 6 0 0 1 395 736 L 395 756 L 220 756 Z" fill="#581C87"/>
+    <text x="228" y="747" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_stock_opname</text>
+    <rect x="345" y="735" width="44" height="15" rx="3" fill="#F3E8FF"/>
+    <text x="367" y="746" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#6B21A8" text-anchor="middle">OPNAME</text>
+    <line x1="220" y1="756" x2="395" y2="756" stroke="#A855F7" stroke-width="1"/>
+    <text x="228" y="771" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_pi : INT</text>
+    <text x="228" y="786" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• no_dokumen_pi : VARCHAR</text>
+    <text x="228" y="801" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal_pi : DATE</text>
+    <text x="228" y="816" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• periode_awal / akhir</text>
+    <text x="228" y="831" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="228" y="846" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 user_id : INT (FK)</text>
+    <text x="228" y="861" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• status : ENUM</text>
+    <text x="228" y="876" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 disetujui_oleh : INT</text>
+  </g>
+
+  <!-- t_stock_opname_detail -->
+  <g id="table_t_stock_opname_detail">
+    <rect x="410" y="730" width="225" height="150" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 410 736 A 6 6 0 0 1 416 730 L 629 730 A 6 6 0 0 1 635 736 L 635 756 L 410 756 Z" fill="#581C87"/>
+    <text x="418" y="747" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_stock_opname_detail</text>
+    <rect x="585" y="735" width="44" height="15" rx="3" fill="#F3E8FF"/>
+    <text x="607" y="746" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#6B21A8" text-anchor="middle">OPNAME</text>
+    <line x1="410" y1="756" x2="635" y2="756" stroke="#A855F7" stroke-width="1"/>
+    <text x="418" y="771" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_pi_detail : INT</text>
+    <text x="418" y="786" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 pi_id : INT (FK)</text>
+    <text x="418" y="801" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="418" y="816" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• sisa_utuh : DEC</text>
+    <text x="418" y="831" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• sisa_ecer : DEC</text>
+    <text x="418" y="846" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• total_ecer_fisik : DEC</text>
+    <text x="418" y="861" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• std_end_stock : DEC</text>
+    <text x="418" y="876" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• variance : DEC</text>
+    <text x="418" y="891" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• percent_variance : DEC</text>
+    <text x="418" y="906" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• status_variance : ENUM</text>
+  </g>
+
+  <!-- t_stock_ledger -->
+  <g id="table_t_stock_ledger">
+    <rect x="650" y="730" width="225" height="150" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 650 736 A 6 6 0 0 1 656 730 L 869 730 A 6 6 0 0 1 875 736 L 875 756 L 650 756 Z" fill="#581C87"/>
+    <text x="658" y="747" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_stock_ledger</text>
+    <rect x="825" y="735" width="44" height="15" rx="3" fill="#F3E8FF"/>
+    <text x="847" y="746" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#6B21A8" text-anchor="middle">KARTU STOK</text>
+    <line x1="650" y1="756" x2="875" y2="756" stroke="#A855F7" stroke-width="1"/>
+    <text x="658" y="771" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_ledger : INT</text>
+    <text x="658" y="786" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 outlet_id : INT (FK)</text>
+    <text x="658" y="801" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#0369A1">🔗 sku : VARCHAR (FK)</text>
+    <text x="658" y="816" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• tanggal : DATE</text>
+    <text x="658" y="831" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• ref_tipe : VARCHAR</text>
+    <text x="658" y="846" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• ref_id : VARCHAR</text>
+    <text x="658" y="861" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_in : DEC (ecer)</text>
+    <text x="658" y="876" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• qty_out : DEC (ecer)</text>
+    <text x="658" y="891" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• saldo_akhir : DEC (ecer)</text>
+    <text x="658" y="906" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="normal" fill="#334155">• keterangan : TEXT</text>
+  </g>
+
+  <!-- t_log_aktivitas -->
+  <g id="table_t_log_aktivitas">
+    <rect x="25" y="940" width="850" height="90" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 25 946 A 6 6 0 0 1 31 940 L 869 940 A 6 6 0 0 1 875 946 L 875 966 L 25 966 Z" fill="#581C87"/>
+    <text x="33" y="957" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF">t_log_aktivitas</text>
+    <rect x="825" y="945" width="44" height="15" rx="3" fill="#F3E8FF"/>
+    <text x="847" y="956" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#6B21A8" text-anchor="middle">AUDIT LOG</text>
+    <line x1="25" y1="966" x2="875" y2="966" stroke="#A855F7" stroke-width="1"/>
+    <text x="33" y="981" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">🔑 id_log : BIGINT (PK)   |   🔗 user_id : INT (FK)   |   • modul : VARCHAR   |   • aksi : VARCHAR   |   • detail_perubahan : JSON/TEXT   |   • ip_address   |   • created_at</text>
+  </g>
+  </g>
+
+  <!-- Footer Catatan Bisnis & Formula -->
+  <g transform="translate(25, 1055)">
+    <rect x="0" y="0" width="850" height="330" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="0" y="0" width="850" height="28" rx="8" fill="#1E293B"/>
+    <text x="15" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#F8FAFC">RINGKASAN ATURAN BISNIS &amp; FORMULA KALKULASI STOK PADA SKEMA</text>
+
+    <!-- Kolom Kiri -->
+    <text x="15" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">1. Pola Header-Detail Transaksi</text>
+    <text x="15" y="68" font-family="sans-serif" font-size="10" fill="#475569">• Penjualan (t_penjualan &rarr; t_penjualan_detail), Penerimaan (t_penerimaan &rarr; t_penerimaan_detail)</text>
+    <text x="15" y="84" font-family="sans-serif" font-size="10" fill="#475569">• Transfer Antar-Outlet (t_transfer &rarr; t_transfer_detail), Stock Opname (t_stock_opname &rarr; detail)</text>
+    <text x="15" y="100" font-family="sans-serif" font-size="10" fill="#475569">• Limbah Bar (t_waste) dirancang flat 1-level agar barista dapat mencatat kilat saat jam sibuk bar.</text>
+
+    <text x="15" y="125" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">2. Integritas Relasi &amp; Constraint Multi-Outlet</text>
+    <text x="15" y="143" font-family="sans-serif" font-size="10" fill="#475569">• Seluruh relasi Master &rarr; Transaksi memakai ON DELETE RESTRICT (data master terlindungi historinya).</text>
+    <text x="15" y="159" font-family="sans-serif" font-size="10" fill="#475569">• Kolom outlet_id hadir di seluruh tabel transaksi dan mutasi (siap multi-cabang tanpa refactoring skema).</text>
+    <text x="15" y="175" font-family="sans-serif" font-size="10" fill="#475569">• Transfer memiliki dual FK ke m_outlet (outlet_asal_id &ne; outlet_tujuan_id) dengan constraint validasi.</text>
+
+    <text x="15" y="200" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">3. Ketentuan Satuan &amp; Tipe Data Presisi</text>
+    <text x="15" y="218" font-family="sans-serif" font-size="10" fill="#475569">• Seluruh kuantitas transaksi &amp; saldo stok menggunakan DECIMAL(12,2) dalam satuan eceran (G, ML, PC).</text>
+    <text x="15" y="234" font-family="sans-serif" font-size="10" fill="#475569">• Nilai pack_standard (isi_per_utuh) di m_item mengonversi sisa utuh kemasan ke satuan eceran di form PI.</text>
+
+    <!-- Kolom Kanan: Formula -->
+    <line x1="500" y1="35" x2="500" y2="320" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="515" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">4. Formula Komputasi Inventaris (Backend Service)</text>
+
+    <rect x="515" y="60" width="335" height="38" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="525" y="76" font-family="monospace" font-size="9.5" font-weight="bold" fill="#1E40AF">Usage = &Sigma; (Qty Jual Menu &times; Qty BOM Ecer)</text>
+    <text x="525" y="90" font-family="sans-serif" font-size="8.5" fill="#3B82F6">Dihitung otomatis saat rekap harian/mingguan dari penjualan menu</text>
+
+    <rect x="515" y="105" width="335" height="38" rx="4" fill="#FEFCE8" stroke="#FEF08A"/>
+    <text x="525" y="121" font-family="monospace" font-size="9" font-weight="bold" fill="#854D0E">Std.End = MAX(0; Begin + Rcv + TrfIn - TrfOut - Waste - Usage)</text>
+    <text x="525" y="135" font-family="sans-serif" font-size="8.5" fill="#A16207">Saldo akhir teoritis sistem; floor nol mencegah nilai stok negatif</text>
+
+    <rect x="515" y="150" width="335" height="38" rx="4" fill="#F0FDF4" stroke="#BBF7D0"/>
+    <text x="525" y="166" font-family="monospace" font-size="9.5" font-weight="bold" fill="#166534">PI Count = (Sisa Utuh &times; Isi/Utuh) + Sisa Ecer</text>
+    <text x="525" y="180" font-family="sans-serif" font-size="8.5" fill="#15803D">Hasil hitung fisik bahan di bar saat closing shift</text>
+
+    <rect x="515" y="195" width="335" height="38" rx="4" fill="#FAF5FF" stroke="#E9D5FF"/>
+    <text x="525" y="211" font-family="monospace" font-size="9.5" font-weight="bold" fill="#6B21A8">Variance = PI Count - Std. End Stock</text>
+    <text x="525" y="225" font-family="monospace" font-size="8.5" fill="#7E22CE">%Variance = Variance / Std. End Stock &times; 100%</text>
+
+    <rect x="515" y="240" width="335" height="38" rx="4" fill="#FDF2F8" stroke="#FBCFE8"/>
+    <text x="525" y="256" font-family="monospace" font-size="9.5" font-weight="bold" fill="#9D174D">DOI = PI Count / (Usage Periode / Hari)</text>
+    <text x="525" y="270" font-family="sans-serif" font-size="8.5" fill="#BE185D">Days of Inventory: estimasi ketahanan stok bahan (dalam hari)</text>
+
+    <!-- Klasifikasi -->
+    <text x="515" y="298" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#0F172A">Toleransi:</text>
+    <text x="575" y="298" font-family="sans-serif" font-size="9" fill="#16A34A">No Var (0%)</text>
+    <text x="645" y="298" font-family="sans-serif" font-size="9" fill="#CA8A04">Low (&le;5%)</text>
+    <text x="710" y="298" font-family="sans-serif" font-size="9" fill="#EA580C">Med (5-20%)</text>
+    <text x="785" y="298" font-family="sans-serif" font-size="9" fill="#DC2626">High (&gt;20%)</text>
+  </g>
+
+  <!-- Watermark / Footer Info -->
+  <text x="450" y="1410" font-family="sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">InvenKopi OMORA &bull; Divisi 2 Database &amp; Backend &bull; Didesain khusus untuk tampilan Halaman Dokumen Portrait A4</text>
+</svg>
